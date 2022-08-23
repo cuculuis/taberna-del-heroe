@@ -19,7 +19,7 @@ const BarraNav = () =>  {
                                 height="30"
                                 className="d-inline-block align-top barraNav-logo"
                                 alt="Logo de la taberna del heroe"
-                            />
+                            />Taberna del Heroe
                         </Navbar.Brand>
                     </Col>
 
