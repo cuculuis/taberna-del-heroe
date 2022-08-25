@@ -4,11 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import loguito from '../../assest/loguito.jpg'
-// import style from './NavBar.css'
+import './navbar.css'
+import { CartWidget } from '../CartWidget/CartWidget';
 
 const BarraNav = () =>  {
     return (
-        <Navbar className="barraNav" bg="light">
+        <Navbar className="barraNav">
             <Container>
                 <Row>
                     <Col>
@@ -23,14 +24,16 @@ const BarraNav = () =>  {
                         </Navbar.Brand>
                     </Col>
 
-                    <Col></Col>
-                    
                     <Col>
-                        <Nav className="me-auto barraNav-links">
+                        <Nav className="justify-content-end barraNav-links">
                             <Nav.Link href="#home">Inicio</Nav.Link>
                             <Nav.Link href="#link">Tienda</Nav.Link>
                             <Nav.Link href="#link">Contacto</Nav.Link>
                         </Nav>
+                    </Col>
+
+                    <Col>
+                    <CartWidget />
                     </Col>
                 </Row>
             </Container>

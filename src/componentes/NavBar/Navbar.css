@@ -1,12 +1,11 @@
-export NavBar 
-
 .barraNav {
     background-color: rgb(56, 7, 146);
 }
 
-.barraNav-logo {width: 100%;}
+.barraNav-logo {width: 10%;}
 
 .barraNav-links {
+    justify-content: flex-end;
     color: #fff;
     font-weight: 700;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
