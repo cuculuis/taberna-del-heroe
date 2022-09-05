@@ -1,3 +1,5 @@
+import Contador from "../Contador/Contador"
+
 export const Card = ({product, price}) => {
     return (
         <div className="container">
@@ -8,6 +10,7 @@ export const Card = ({product, price}) => {
                 <h4>
                     {price}
                 </h4>  
+            <Contador />
             </div>
         </div>
 )}
