@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import loguito from '../../assest/loguito.jpg'
-import './navbar.css'
+import './barranav.css'
 import { CartWidget } from '../CartWidget/CartWidget';
 
 const BarraNav = () =>  {
