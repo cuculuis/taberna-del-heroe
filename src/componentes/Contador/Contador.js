@@ -1,12 +1,13 @@
-import { useState } from "react"
 
-const Contador = () => {
-    const [count, setCount] = useState(0)
+
+const Contador = ({max, count, setCount, agregar}) => {
+    
 
     
     const sumar = () => {
-        setCount( count + 1 )
-        
+        if ( count < max) {
+            setCount( count + 1 )
+        }
     }
 
     const restar = () => {
@@ -14,6 +15,7 @@ const Contador = () => {
             setCount( count - 1 )
         }
     }
+
 
     // useEffect( () => {
     //     console.log("Contador Montado!")
@@ -26,7 +28,8 @@ const Contador = () => {
             <button  onClick={restar} className="btn btn-outline-dark">-</button>
             <span className="mx-2">{count}</span>
             <button onClick={sumar} className="btn btn-outline-dark">+</button>
-
+            <br />
+            <button onClick={agregar} className="btn btn-outline-success">Agregar a la bolsa</button>
         </div>
     )
 

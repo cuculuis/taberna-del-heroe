@@ -1,7 +1,24 @@
 import Contador from "../Contador/Contador";
 import "./itemdetail.css"
+import { useState } from "react";
 
 const ItemDetail = ({item}) => {
+
+    const [cantidad, setCantidad] = useState(0)
+
+    const agregarBolsa = () => {
+        const itemToCart = {
+            id: item.id,
+            nombre: item.nombre,
+            precio: item.precio,
+            cantidad
+        }
+        console.log(itemToCart)
+        // console.log(
+        //     ...item,
+        //     cantidad
+        // )
+    }
 
     return ( 
         <div className="card" >
@@ -11,7 +28,12 @@ const ItemDetail = ({item}) => {
             <span>Stock disponible: {item.stock}</span>
             <p>Descripción: {item.descrip}</p>
             <p>Categoria: {item.category}</p>
-            <Contador />
+            <Contador 
+                max={item.stock}
+                count={cantidad}
+                setCount={setCantidad}
+                agregar={agregarBolsa}
+            />
         </div>
 )
 
