@@ -21,7 +21,7 @@ const Contador = () => {
 
     return (
         <div className="">
-            <h2>Cantidad</h2>
+            <h5>Cantidad</h5>
 
             <button  onClick={restar} className="btn btn-outline-dark">-</button>
             <span className="mx-2">{count}</span>

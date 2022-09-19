@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import loguito from '../../assest/loguito.jpg'
 import './barranav.css'
 import { CartWidget } from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const BarraNav = () =>  {
     return (
@@ -13,7 +14,7 @@ const BarraNav = () =>  {
             <Container>
                 <Row>
                     <Col>
-                        <Navbar.Brand href="#home">
+                        <Link to="/" className='nav-link header-navlink'>
                             <img
                                 src= {loguito}
                                 width="30"
@@ -21,14 +22,15 @@ const BarraNav = () =>  {
                                 className="d-inline-block align-top barraNav-logo"
                                 alt="Logo de la taberna del heroe"
                             />Taberna del Heroe
-                        </Navbar.Brand>
+                        </Link>
                     </Col>
 
                     <Col>
                         <Nav className="justify-content-end barraNav-links">
-                            <Nav.Link href="#home">Inicio</Nav.Link>
-                            <Nav.Link href="#link">Tienda</Nav.Link>
-                            <Nav.Link href="#link">Contacto</Nav.Link>
+                            <Link to="/" className='header-navlink'>Inicio</Link>
+                            <Link to="/productos/equipo" className='header-navlink'>Equipo</Link>
+                            <Link to="/productos/armas" className='header-navlink'>Armas</Link>
+                            <Link to="/productos/posiones" className='header-navlink'>Posiones</Link>
                         </Nav>
                     </Col>
 
