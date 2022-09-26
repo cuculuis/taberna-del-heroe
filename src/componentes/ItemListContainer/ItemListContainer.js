@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { ItemList } from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import Loader from '../Loader/Loader'
 
 
 
@@ -35,14 +36,11 @@ export const ItemListContainer = () => {
     
     return(
         <div className="container">
-            <h2>Items</h2>
+            
             {
                 loading 
                 ?   <>
-                        <h2>Cargando...</h2>
-                        <div className="spinner-border text-primary" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                        </div>
+                        <Loader />
                     </>
                 : 
                     <ItemList producto={producto} className="row" />

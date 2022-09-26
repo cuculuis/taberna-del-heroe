@@ -23,9 +23,9 @@ export const CartWidget = () => {
 
     return (
         <Link to="/Bolsa">
-            <div className='contenedor-bolsita'>
+            <div className='contenedor-bolsita my-2'>
                 <img src={llena ? bolsaLlena : bolsaVacia} alt='Bolsa de compras' className='bolsita'></img>
-                <span className='m-3 align-center'>{bolsaQuantity()}</span>
+                <span className='m-3 align-center contador-bolsa'>{bolsaQuantity()}</span>
             </div>
         </Link>
     )

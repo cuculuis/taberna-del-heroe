@@ -17,7 +17,7 @@ const BarraNav = () =>  {
                         <Link to="/" className='nav-link header-navlink'>
                             <img
                                 src= {loguito}
-                                className="d-inline-block align-center barraNav-logo"
+                                className="d-inline-block align-center barraNav-logo mx-2"
                                 alt="Logo de la taberna del heroe"
                             />Taberna del Heroe
                         </Link>

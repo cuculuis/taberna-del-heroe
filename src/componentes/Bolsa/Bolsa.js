@@ -1,12 +1,25 @@
 import { useContext } from "react";
 import { BolsaContext } from "../../context/BolsaContext";
-import { BsFillTrashFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import BolsaItem from "../BolsaItem.js/BolsaItem";
 
 
 
 const Bolsa = () => {
 
-    const { bolsa, bolsaTotal, vaciarBolsa, removeToBolsa } = useContext(BolsaContext)
+    const { bolsa, bolsaTotal, vaciarBolsa } = useContext(BolsaContext)
+
+
+    if (bolsa.length === 0) {
+        return (
+            <div className="container my-4">
+                <h2>Tu bolsa esta vacia</h2>
+                <hr />
+
+                <Link to="/" className="btn btn-outline-primary">Ir a comprar</Link>
+            </div>
+        ) 
+    }
 
     return ( 
         <div className="container">
@@ -15,13 +28,14 @@ const Bolsa = () => {
 
             { bolsa.map((item) => 
             (
-                    <div className="col-4" key={item.id}>
-                        <h3>{item.nombre}</h3>
-                        <p>Precio: {item.precio} Rupias</p>
-                        <small>Cantidad: {item.cantidad}</small>
-                        <button onClick={() => removeToBolsa(item.id)} className="btn btn-warning mx-2"><BsFillTrashFill/></button>
-                        <hr />
-                    </div>
+                <BolsaItem item={item} /> 
+                    // <div className="col-4" key={item.id}>
+                    //     <h3>{item.nombre}</h3>
+                    //     <p>Precio: {item.precio} Rupias</p>
+                    //     <small>Cantidad: {item.cantidad}</small>
+                    //     <button onClick={() => removeToBolsa(item.id)} className="btn btn-warning mx-2"><BsFillTrashFill/></button>
+                    //     <hr />
+                    // </div>
             )
 
             ) }

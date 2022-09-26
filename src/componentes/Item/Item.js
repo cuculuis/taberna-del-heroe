@@ -1,13 +1,11 @@
-import Contador from "../Contador/Contador"
+
 import { Link } from "react-router-dom"
 import "./item.css"
-import { useState } from "react"
 
 
 
 const Item = ( {producto}) => {
     
-    const [cantidad, setCantidad] = useState(0)
 
     // const agregarBolsa = () => {
     //     console.log({
@@ -23,11 +21,6 @@ const Item = ( {producto}) => {
             <p>Precio: {producto.precio} Rupias</p>
             <span>Stock disponible: {producto.stock}</span>
             <p>{producto.descrip}</p>
-            <Contador 
-                max={producto.stock}
-                count={cantidad}
-                setCount={setCantidad}
-            />
             <Link to={`/item/${producto.id}`} className='btn btn-outline-dark'>Ver Más</Link>
         </div>
     )

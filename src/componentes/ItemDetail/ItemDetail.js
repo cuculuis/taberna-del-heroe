@@ -12,40 +12,43 @@ const ItemDetail = ({item}) => {
     console.log(bolsa)
 
     const agregarBolsa = () => {
-        const itemToBolsa = {
-            id: item.id,
-            nombre: item.nombre,
-            precio: item.precio,
-            cantidad
-        }
+        if (cantidad > 0 ) {
+            const itemToBolsa = {
+                id: item.id,
+                nombre: item.nombre,
+                precio: item.precio,
+                cantidad
+            }
+            addToBolsa( itemToBolsa )
+        } 
         
-        
-        addToBolsa( itemToBolsa )
     }
 
     return ( 
-        <div className="card" >
-            <img src={item.img} alt="Producto" className="img-producto-detalle"/>
-            <h4>{item.nombre}</h4>
-            <p>Precio: {item.precio} Rupias</p>
-            <span>Stock disponible: {item.stock}</span>
-            <p>Descripción: {item.descrip}</p>
-            <p>Categoria: {item.category}</p>
+        
+        <div className="container m-4">
+            <div className="card" >
+                <img src={item.img} alt="Producto" className="img-producto-detalle"/>
+                <h4>{item.nombre}</h4>
+                <p>Precio: {item.precio} Rupias</p>
+                <span>Stock disponible: {item.stock}</span>
+                <p>Descripción: {item.descrip}</p>
+                <p>Categoria: {item.category}</p>
 
-            {
-                isInBolsa(item.id)
-                ? 
-                <Link to="/Bolsa" className="btn btn-success my-2"> Terminar mi compra</Link>
-                :
-                <Contador 
-                    max={item.stock}
-                    count={cantidad}
-                    setCount={setCantidad}
-                    agregar={agregarBolsa}
-                />
-            }
-            
-
+                {
+                    isInBolsa(item.id)
+                    ? 
+                    <Link to="/Bolsa" className="btn btn-success my-2"> Terminar mi compra</Link>
+                    :
+                    <Contador 
+                        max={item.stock}
+                        count={cantidad}
+                        setCount={setCantidad}
+                        agregar={agregarBolsa}
+                    />
+                }
+                
+            </div>
         </div>
 )
 
