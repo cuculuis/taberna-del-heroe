@@ -1,8 +1,10 @@
 .barraNav {
     background-color: rgb(82, 45, 151);
+    color: #fff;
+    
 }
 
-.barraNav-logo {width: 10%;}
+.barraNav-logo {width: 25%;}
 
 .barraNav-links {
     justify-content: flex-end;

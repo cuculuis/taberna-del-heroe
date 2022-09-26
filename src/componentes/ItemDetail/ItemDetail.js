@@ -1,23 +1,26 @@
 import Contador from "../Contador/Contador";
 import "./itemdetail.css"
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BolsaContext } from "../../context/BolsaContext";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
+    const { bolsa, addToBolsa, isInBolsa } = useContext(BolsaContext)
+    console.log(bolsa)
+
     const agregarBolsa = () => {
-        const itemToCart = {
+        const itemToBolsa = {
             id: item.id,
             nombre: item.nombre,
             precio: item.precio,
             cantidad
         }
-        console.log(itemToCart)
-        // console.log(
-        //     ...item,
-        //     cantidad
-        // )
+        
+        
+        addToBolsa( itemToBolsa )
     }
 
     return ( 
@@ -28,12 +31,21 @@ const ItemDetail = ({item}) => {
             <span>Stock disponible: {item.stock}</span>
             <p>Descripción: {item.descrip}</p>
             <p>Categoria: {item.category}</p>
-            <Contador 
-                max={item.stock}
-                count={cantidad}
-                setCount={setCantidad}
-                agregar={agregarBolsa}
-            />
+
+            {
+                isInBolsa(item.id)
+                ? 
+                <Link to="/Bolsa" className="btn btn-success my-2"> Terminar mi compra</Link>
+                :
+                <Contador 
+                    max={item.stock}
+                    count={cantidad}
+                    setCount={setCantidad}
+                    agregar={agregarBolsa}
+                />
+            }
+            
+
         </div>
 )
 

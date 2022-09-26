@@ -17,20 +17,18 @@ const BarraNav = () =>  {
                         <Link to="/" className='nav-link header-navlink'>
                             <img
                                 src= {loguito}
-                                width="30"
-                                height="30"
-                                className="d-inline-block align-top barraNav-logo"
+                                className="d-inline-block align-center barraNav-logo"
                                 alt="Logo de la taberna del heroe"
                             />Taberna del Heroe
                         </Link>
                     </Col>
 
                     <Col>
-                        <Nav className="justify-content-end barraNav-links">
-                            <Link to="/" className='header-navlink'>Inicio</Link>
-                            <Link to="/productos/equipo" className='header-navlink'>Equipo</Link>
-                            <Link to="/productos/armas" className='header-navlink'>Armas</Link>
-                            <Link to="/productos/posiones" className='header-navlink'>Posiones</Link>
+                        <Nav className="justify-content-end align-center barraNav-links">
+                            <Link to="/" className='header-navlink m-4 text-decoration-none'>Inicio</Link>
+                            <Link to="/productos/equipo" className='header-navlink m-4 text-decoration-none'>Equipo</Link>
+                            <Link to="/productos/armas" className='header-navlink m-4 text-decoration-none'>Armas</Link>
+                            <Link to="/productos/posiones" className='header-navlink m-4 text-decoration-none'>Posiones</Link>
                         </Nav>
                     </Col>
 
