@@ -50,6 +50,19 @@ export const BolsaProvider = ({children}) => {
         })
     }
 
+    const finalizarCompra = (id) => {
+        Swal.fire({
+            title: '¡Compra exitosa!',
+            text: `Tu numero de orden es: ${id}`,
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Genial'
+            })
+            setBolsa([])
+            }
+
+
+
     return (
         <BolsaContext.Provider value={ {
             bolsa,
@@ -58,7 +71,8 @@ export const BolsaProvider = ({children}) => {
             isInBolsa,
             bolsaQuantity,
             bolsaTotal,
-            vaciarBolsa
+            vaciarBolsa,
+            finalizarCompra
         }
         } >
             {children}

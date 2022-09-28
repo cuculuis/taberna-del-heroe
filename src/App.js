@@ -6,6 +6,7 @@ import Contacto from './componentes/Contacto/Contacto';
 import Nosotros from './componentes/Nosotros/Nosotros';
 import { BolsaProvider } from './context/BolsaContext'
 import Bolsa from './componentes/Bolsa/Bolsa';
+import Checkout from './componentes/Checkout/Checkout';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/item/:itemId' element={ <ItemDetailContainer /> }/>
 
             <Route path='/Bolsa' element={ <Bolsa /> } />
+            <Route path='/Checkout' element={ <Checkout /> } />
             <Route path='/Nosotros' element={ <Nosotros /> }/>
             <Route path='/Contacto' element={ <Contacto /> }/>
             <Route path='*' element={ <Navigate to="/" /> }/>

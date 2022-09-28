@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { BolsaContext } from "../../context/BolsaContext";
 import { Link } from "react-router-dom";
 import BolsaItem from "../BolsaItem.js/BolsaItem";
+import Checkout from "../Checkout/Checkout";
 
 
 
@@ -28,21 +29,14 @@ const Bolsa = () => {
 
             { bolsa.map((item) => 
             (
-                <BolsaItem item={item} /> 
-                    // <div className="col-4" key={item.id}>
-                    //     <h3>{item.nombre}</h3>
-                    //     <p>Precio: {item.precio} Rupias</p>
-                    //     <small>Cantidad: {item.cantidad}</small>
-                    //     <button onClick={() => removeToBolsa(item.id)} className="btn btn-warning mx-2"><BsFillTrashFill/></button>
-                    //     <hr />
-                    // </div>
-            )
-
-            ) }
+                <BolsaItem item={item} key={item.id}/> 
+            )) }
 
 
                 <h2>Total: {bolsaTotal()} Rupias</h2>
+                <Link to='/Checkout' path={ <Checkout /> } className='btn btn-success mx-2'>Terminar tu compra</Link>
                 <button onClick={vaciarBolsa} className="btn btn-danger">Vaciar bolsa</button>
+
         </div>
 
     );
